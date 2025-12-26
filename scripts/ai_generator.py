@@ -51,7 +51,8 @@ class GeminiLabGenerator:
             raise ValueError("GEMINI_API_KEY environment variable is required")
 
         self.client = genai.Client(api_key=self.api_key)
-        self.model_name = 'gemini-1.5-pro'
+        # Use gemini-1.5-flash (free tier, fast, stable)
+        self.model_name = 'gemini-1.5-flash'
 
     def _build_prompt(self, topic_title: str, topic_summary: str,
                       technology: str, existing_labs: list[str]) -> str:
@@ -144,7 +145,23 @@ Generate the lab now:"""
 
         return prompt
 
-    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=2, min=4, max=30))
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=2, min=4, max=30), reraise=True)
+    def _call_gemini(self, prompt: str, temperature: float = 0.7, max_tokens: int = 8192) -> str:
+        """Call Gemini API with retry logic"""
+        try:
+            response = self.client.models.generate_content(
+                model=self.model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=temperature,
+                    max_output_tokens=max_tokens,
+                )
+            )
+            return response.text
+        except Exception as e:
+            print(f"Gemini API error: {type(e).__name__}: {e}")
+            raise
+
     def generate_lab(self, topic_title: str, topic_summary: str,
                      technology: Optional[str] = None,
                      existing_labs: Optional[list[str]] = None) -> GeneratedLab:
@@ -161,18 +178,9 @@ Generate the lab now:"""
 
         prompt = self._build_prompt(topic_title, topic_summary, technology, existing_labs)
 
-        # Generate with Gemini (new SDK)
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.7,
-                max_output_tokens=8192,
-            )
-        )
-
-        # Parse the JSON response
-        response_text = response.text.strip()
+        # Generate with Gemini (new SDK) - uses retry wrapper
+        response_text = self._call_gemini(prompt, temperature=0.7, max_tokens=8192)
+        response_text = response_text.strip()
 
         # Remove markdown code block if present
         if response_text.startswith('```'):
@@ -236,18 +244,13 @@ Based on:
 
 Return ONLY one word: easy, medium, or hard"""
 
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.1,
-                max_output_tokens=10,
-            )
-        )
-
-        difficulty = response.text.strip().lower()
-        if difficulty not in DIFFICULTIES:
-            difficulty = lab.difficulty  # Keep original if invalid
+        try:
+            response_text = self._call_gemini(prompt, temperature=0.1, max_tokens=10)
+            difficulty = response_text.strip().lower()
+            if difficulty not in DIFFICULTIES:
+                difficulty = lab.difficulty  # Keep original if invalid
+        except Exception:
+            difficulty = lab.difficulty  # Keep original on error
 
         return difficulty
 
