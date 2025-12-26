@@ -20,6 +20,10 @@ on:
         default: ''
         type: string
 
+# Permissions for the GITHUB_TOKEN
+permissions:
+  contents: write
+
 env:
   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
   MAX_LABS_BEFORE_DAILY: 50
