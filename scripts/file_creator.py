@@ -28,8 +28,6 @@ TECH_BADGES = {
     'helm': '![Helm](https://img.shields.io/badge/Helm-0F1689?logo=helm&logoColor=white)',
     'argocd': '![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?logo=argo&logoColor=white)',
     'ansible': '![Ansible](https://img.shields.io/badge/Ansible-EE0000?logo=ansible&logoColor=white)',
-    'aws': '![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazon-aws&logoColor=white)',
-    'terraform': '![Terraform](https://img.shields.io/badge/Terraform
 }
 
 

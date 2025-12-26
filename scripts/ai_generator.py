@@ -14,7 +14,8 @@ from typing import Optional, Dict, Any
 from dataclasses import dataclass
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 
 @dataclass
@@ -49,8 +50,8 @@ class GeminiLabGenerator:
         if not self.api_key:
             raise ValueError("GEMINI_API_KEY environment variable is required")
 
-        genai.configure(api_key=self.api_key)
-        self.model = genai.GenerativeModel('gemini-1.5-pro')
+        self.client = genai.Client(api_key=self.api_key)
+        self.model_name = 'gemini-1.5-pro'
 
     def _build_prompt(self, topic_title: str, topic_summary: str,
                       technology: str, existing_labs: list[str]) -> str:
@@ -160,10 +161,11 @@ Generate the lab now:"""
 
         prompt = self._build_prompt(topic_title, topic_summary, technology, existing_labs)
 
-        # Generate with Gemini
-        response = self.model.generate_content(
-            prompt,
-            generation_config=genai.types.GenerationConfig(
+        # Generate with Gemini (new SDK)
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt,
+            config=types.GenerateContentConfig(
                 temperature=0.7,
                 max_output_tokens=8192,
             )
@@ -234,9 +236,10 @@ Based on:
 
 Return ONLY one word: easy, medium, or hard"""
 
-        response = self.model.generate_content(
-            prompt,
-            generation_config=genai.types.GenerationConfig(
+        response = self.client.models.generate_content(
+            model=self.model_name,
+            contents=prompt,
+            config=types.GenerateContentConfig(
                 temperature=0.1,
                 max_output_tokens=10,
             )
