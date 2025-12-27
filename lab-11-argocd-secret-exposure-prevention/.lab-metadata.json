@@ -1,0 +1,13 @@
+{
+  "title": "ArgoCD: Preventing Secret Exposure with GitOps",
+  "technology": "argocd",
+  "difficulty": "medium",
+  "generated_at": "2025-12-27T23:32:10.634813",
+  "objectives": [
+    "Set up ArgoCD in a Kubernetes cluster.",
+    "Create an ArgoCD application to manage a Kubernetes deployment.",
+    "Simulate accidental secret exposure by committing a secret to a Git repository.",
+    "Implement Kustomize to manage secrets and prevent them from being stored directly in the repository.",
+    "Observe how ArgoCD detects and reverts changes to the deployed application based on the Git repository state."
+  ]
+}
