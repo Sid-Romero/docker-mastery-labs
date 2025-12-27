@@ -1,0 +1,13 @@
+{
+  "title": "Helm: Git as a Database Anti-Pattern Avoidance",
+  "technology": "helm",
+  "difficulty": "medium",
+  "generated_at": "2025-12-27T01:57:42.941636",
+  "objectives": [
+    "Understand the problems with using Git as a database for application configuration.",
+    "Learn how to create a Helm chart.",
+    "Manage application configurations using Helm values files.",
+    "Template Kubernetes manifests using Helm.",
+    "Deploy and manage applications with Helm."
+  ]
+}
