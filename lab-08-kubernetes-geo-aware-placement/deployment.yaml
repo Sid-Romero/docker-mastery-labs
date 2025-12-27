@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: geo-aware-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: geo-aware-app
+  template:
+    metadata:
+      labels:
+        app: geo-aware-app
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: topology.kubernetes.io/region
+                operator: In
+                values:
+                - us-east-1
+      containers:
+      - name: geo-aware-app
+        image: nginx:latest
+        ports:
+        - containerPort: 80

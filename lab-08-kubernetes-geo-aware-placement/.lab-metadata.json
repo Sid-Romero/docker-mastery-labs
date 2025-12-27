@@ -1,0 +1,12 @@
+{
+  "title": "Kubernetes: Geo-Aware Pod Placement",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2025-12-27T03:57:41.915320",
+  "objectives": [
+    "Understand Kubernetes node affinity and its role in pod scheduling.",
+    "Learn how to use node labels to represent geographical regions.",
+    "Implement node affinity rules to ensure pods are deployed in specific regions.",
+    "Explore taints and tolerations to prevent pods from being scheduled on specific nodes (or require specific conditions)."
+  ]
+}
