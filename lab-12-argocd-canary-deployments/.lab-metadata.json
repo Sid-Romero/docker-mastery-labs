@@ -1,0 +1,13 @@
+{
+  "title": "ArgoCD: Progressive Rollouts with Canary Deployments",
+  "technology": "argocd",
+  "difficulty": "medium",
+  "generated_at": "2025-12-28T02:11:24.033037",
+  "objectives": [
+    "Install and configure ArgoCD in a Kubernetes cluster.",
+    "Deploy an application using ArgoCD.",
+    "Implement a canary deployment strategy using ArgoCD.",
+    "Verify and promote the canary deployment.",
+    "Understand ArgoCD's rollback capabilities."
+  ]
+}
