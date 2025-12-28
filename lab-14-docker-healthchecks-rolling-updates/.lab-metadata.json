@@ -1,0 +1,12 @@
+{
+  "title": "Docker Healthchecks and Rolling Updates",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2025-12-28T08:33:22.872453",
+  "objectives": [
+    "Understand the importance of healthchecks in Dockerized applications.",
+    "Implement healthchecks in a Dockerfile.",
+    "Use Docker Compose to define and manage a multi-container application with healthchecks.",
+    "Simulate a rolling update and observe the healthcheck-driven orchestration."
+  ]
+}
