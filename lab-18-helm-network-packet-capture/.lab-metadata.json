@@ -1,0 +1,12 @@
+{
+  "title": "Helm Chart for Network Packet Capture with tcpdump",
+  "technology": "helm",
+  "difficulty": "medium",
+  "generated_at": "2025-12-29T02:09:45.965600",
+  "objectives": [
+    "Create a basic Helm chart.",
+    "Parameterize a deployment using values.yaml.",
+    "Use ConfigMaps to configure tcpdump.",
+    "Deploy and manage applications with Helm."
+  ]
+}

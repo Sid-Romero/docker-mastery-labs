@@ -1,0 +1,17 @@
+{{- if .Values.service.create -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "tcpdump-capture.fullname" . }}
+  labels:
+    {{- include "tcpdump-capture.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "tcpdump-capture.selectorLabels" . | nindent 4 }}
+{{- end }}

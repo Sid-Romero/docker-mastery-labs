@@ -1,0 +1,6 @@
+apiVersion: v2
+name: tcpdump-capture
+description: A Helm chart for capturing network packets using tcpdump
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
