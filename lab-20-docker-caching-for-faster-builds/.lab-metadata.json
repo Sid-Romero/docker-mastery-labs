@@ -1,0 +1,11 @@
+{
+  "title": "Docker Caching for Faster Builds",
+  "technology": "docker",
+  "difficulty": "easy",
+  "generated_at": "2025-12-29T11:23:53.076732",
+  "objectives": [
+    "Understand how Docker's layer caching works.",
+    "Identify Dockerfile instructions that invalidate the cache.",
+    "Optimize Dockerfiles for faster build times by leveraging caching."
+  ]
+}
