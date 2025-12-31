@@ -1,0 +1,12 @@
+{
+  "title": "Kubernetes: ConfigMap Chunking for Large Configurations",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2025-12-31T11:23:48.284878",
+  "objectives": [
+    "Understand the limitations of Kubernetes ConfigMaps.",
+    "Learn how to split a large configuration file into smaller chunks.",
+    "Implement a Pod that can reassemble a configuration from multiple ConfigMaps.",
+    "Explore different approaches to ConfigMap management for large configurations."
+  ]
+}
