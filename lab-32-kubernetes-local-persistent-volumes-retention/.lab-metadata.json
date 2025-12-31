@@ -1,0 +1,13 @@
+{
+  "title": "Kubernetes: Local Persistent Volumes and Data Retention",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2025-12-31T16:32:28.845691",
+  "objectives": [
+    "Understand the limitations of using `hostPath` for Persistent Volumes.",
+    "Create a Persistent Volume (PV) and Persistent Volume Claim (PVC) using `hostPath`.",
+    "Deploy a pod that utilizes the PVC.",
+    "Simulate pod failure and verify data persistence.",
+    "Clean up resources."
+  ]
+}
