@@ -1,0 +1,11 @@
+{
+  "title": "ArgoCD: Managing Terraform Cloud with GitOps",
+  "technology": "argocd",
+  "difficulty": "medium",
+  "generated_at": "2025-12-31T08:35:59.163473",
+  "objectives": [
+    "Set up ArgoCD to monitor a Git repository containing Terraform configurations.",
+    "Configure ArgoCD to trigger Terraform Cloud workspace updates upon code changes.",
+    "Understand the GitOps workflow for managing infrastructure changes with Terraform Cloud."
+  ]
+}
