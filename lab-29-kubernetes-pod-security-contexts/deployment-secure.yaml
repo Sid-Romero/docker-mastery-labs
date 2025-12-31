@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: secure-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: secure-deployment
+  template:
+    metadata:
+      labels:
+        app: secure-deployment
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+      - name: main
+        image: busybox:latest
+        command: ["sleep", "3600"]

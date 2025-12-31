@@ -1,0 +1,13 @@
+{
+  "title": "Kubernetes Pod Security Contexts",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2025-12-31T04:02:03.927347",
+  "objectives": [
+    "Understand the purpose and benefits of Pod Security Contexts.",
+    "Configure user and group IDs for containers.",
+    "Manage Linux capabilities for containers.",
+    "Apply Security Contexts at the Pod and Container level.",
+    "Verify the effective security settings of running containers."
+  ]
+}
