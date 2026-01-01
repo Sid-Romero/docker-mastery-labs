@@ -1,0 +1,12 @@
+{
+  "title": "Kubernetes Horizontal Pod Autoscaling (HPA)",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2026-01-01T04:12:23.569149",
+  "objectives": [
+    "Understand the concept of Horizontal Pod Autoscaling (HPA)",
+    "Deploy a sample application to Kubernetes",
+    "Configure HPA to scale deployments based on CPU utilization",
+    "Observe HPA in action and verify scaling behavior"
+  ]
+}

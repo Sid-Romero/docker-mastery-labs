@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-consumer
+spec:
+  selector:
+    matchLabels:
+      app: cpu-consumer
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cpu-consumer
+    spec:
+      containers:
+      - name: cpu-consumer
+        image: busybox:latest
+        command: ['sh', '-c', 'while true; do dd if=/dev/zero of=/dev/null bs=1M count=100; done']
+        resources:
+          limits:
+            cpu: "500m"
+          requests:
+            cpu: "200m"
