@@ -1,0 +1,13 @@
+1. Get the application URL by running these commands:
+  {{- if .Values.ingress.enabled }}
+  {{- if eq .Values.ingress.className "nginx" }}
+  http://{{ .Values.ingress.hosts | first | get "host" }}
+  {{- else }}
+  {{- end }}
+  {{- else if contains "NodePort" .Values.service.type }}
+        {{ printf "%s:%d" .Release.Service .Values.service.port | quote }}
+  {{- else if contains "LoadBalancer" .Values.service.type }}
+        {{ printf "%s:%d" .Release.Service .Values.service.port | quote }}
+  {{- else if contains "ClusterIP" .Values.service.type }}
+  kubectl port-forward service/{{ include "job-app.fullname" . }} {{ .Values.service.port }}:{{ .Values.service.port }}
+  {{- end }}

@@ -1,0 +1,12 @@
+{
+  "title": "Helm Chart for a Simple Job Application Service",
+  "technology": "helm",
+  "difficulty": "medium",
+  "generated_at": "2026-01-01T11:23:24.930429",
+  "objectives": [
+    "Create a basic Helm chart structure.",
+    "Define configurable values for a deployment.",
+    "Use Helm templates to generate Kubernetes manifests.",
+    "Deploy and test the Helm chart on a local Kubernetes cluster."
+  ]
+}
