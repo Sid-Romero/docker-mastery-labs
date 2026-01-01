@@ -1,0 +1,12 @@
+{
+  "title": "Kubernetes: Rolling Updates with Readiness Probes",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2026-01-01T16:33:00.805908",
+  "objectives": [
+    "Understand the concept of rolling updates in Kubernetes.",
+    "Learn how to configure readiness probes for application health checks.",
+    "Observe the behavior of rolling updates with readiness probes.",
+    "Understand the impact of readiness probe configuration on the update process."
+  ]
+}
