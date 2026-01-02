@@ -1,0 +1,11 @@
+{
+  "title": "Self-Hosted Address Validation with Docker",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2026-01-02T08:36:16.171654",
+  "objectives": [
+    "Understand how to Dockerize a Python application.",
+    "Learn to use Docker Compose to manage multiple containers.",
+    "Practice exposing a service through Docker's port mapping."
+  ]
+}
