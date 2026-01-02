@@ -1,0 +1,12 @@
+{
+  "title": "Docker: Building and Orchestrating a Multi-Container App",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2026-01-02T04:05:49.211853",
+  "objectives": [
+    "Create a Dockerfile for a Python Flask application.",
+    "Define a multi-container application using Docker Compose.",
+    "Configure networking between Docker containers.",
+    "Understand the basics of service orchestration with Docker Compose."
+  ]
+}
