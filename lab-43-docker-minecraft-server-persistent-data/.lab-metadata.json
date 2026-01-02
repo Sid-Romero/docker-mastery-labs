@@ -1,0 +1,12 @@
+{
+  "title": "Docker Minecraft Server with Persistent Data",
+  "technology": "docker",
+  "difficulty": "easy",
+  "generated_at": "2026-01-02T16:31:59.128743",
+  "objectives": [
+    "Learn how to use pre-built Docker images for applications.",
+    "Understand how to configure Docker containers using environment variables.",
+    "Learn how to persist data using Docker volumes.",
+    "Understand basic Docker container lifecycle management."
+  ]
+}
