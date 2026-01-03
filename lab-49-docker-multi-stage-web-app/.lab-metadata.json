@@ -1,0 +1,12 @@
+{
+  "title": "Docker: Building a Simple Web App with Multi-Stage Builds",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2026-01-03T19:19:43.941570",
+  "objectives": [
+    "Understand the benefits of Docker multi-stage builds.",
+    "Create a Dockerfile with multiple stages for building and running a web application.",
+    "Optimize Docker image size by using different base images for build and runtime.",
+    "Learn how to copy artifacts between Docker build stages."
+  ]
+}
