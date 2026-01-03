@@ -1,0 +1,12 @@
+{
+  "title": "Ansible: Automating Form Submission Approvals with GitOps",
+  "technology": "ansible",
+  "difficulty": "medium",
+  "generated_at": "2026-01-03T16:31:06.648531",
+  "objectives": [
+    "Learn how to use Ansible to interact with Git repositories.",
+    "Understand how to automate tasks based on external triggers.",
+    "Implement a basic GitOps workflow using Ansible.",
+    "Use Ansible to manage configuration files."
+  ]
+}

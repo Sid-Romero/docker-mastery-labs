@@ -1,0 +1,62 @@
+---
+- name: Simulate Form Submission and Approval
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    submission_id: 2  # Simulated submission ID
+    submission_name: 'Jane Smith'
+    submission_email: 'jane.smith@example.com'
+
+  tasks:
+    - name: Add new submission to config.yml
+      blockinfile:
+        path: form-submissions/config.yml
+        marker: "# {mark} ADD NEW SUBMISSION"
+        insertafter: "submissions:"
+        block: |
+          - id: "{{ submission_id }}"
+            name: "{{ submission_name }}"
+            email: "{{ submission_email }}"
+            status: pending
+
+    - name: Commit changes to Git
+      command: git add form-submissions/config.yml
+      args:
+        chdir: .
+
+    - name: Commit changes to Git
+      command: git commit -m "Added new submission"
+      args:
+        chdir: .
+
+    - name: Push changes to Git
+      command: git push origin main
+      args:
+        chdir: .
+
+    - name: Approve Submission (Simulated)
+      debug:
+        msg: "Simulating approval process for submission {{ submission_id }}"
+
+    - name: Update Submission Status in config.yml
+      replace: 
+        path: form-submissions/config.yml
+        regexp: 'id: "{{ submission_id }}"\n.*status: pending'
+        replace: 'id: "{{ submission_id }}"\n            name: "{{ submission_name }}"\n            email: "{{ submission_email }}"\n            status: approved'
+
+    - name: Commit changes to Git
+      command: git add form-submissions/config.yml
+      args:
+        chdir: .
+
+    - name: Commit changes to Git
+      command: git commit -m "Approved submission {{ submission_id }}"
+      args:
+        chdir: .
+
+    - name: Push changes to Git
+      command: git push origin main
+      args:
+        chdir: .
