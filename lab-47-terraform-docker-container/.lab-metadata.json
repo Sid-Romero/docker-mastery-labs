@@ -1,0 +1,11 @@
+{
+  "title": "Terraform: Provisioning a Docker Container",
+  "technology": "terraform",
+  "difficulty": "easy",
+  "generated_at": "2026-01-03T11:20:51.702693",
+  "objectives": [
+    "Understand the basic Terraform workflow.",
+    "Learn how to define and manage Docker resources with Terraform.",
+    "Provision and destroy a Docker container using Terraform."
+  ]
+}
