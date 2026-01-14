@@ -1,0 +1,12 @@
+{
+  "title": "Dockerized Monitoring with cAdvisor and Prometheus",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2026-01-14T04:11:43.727061",
+  "objectives": [
+    "Understand how to containerize cAdvisor and Prometheus.",
+    "Learn how to configure Prometheus to scrape metrics from cAdvisor.",
+    "Set up a basic monitoring stack using Docker Compose.",
+    "Visualize container metrics using Prometheus's built-in UI."
+  ]
+}

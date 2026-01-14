@@ -1,0 +1,1 @@
+# This Dockerfile is not needed for this lab.  The images are pulled directly from Docker Hub using Docker Compose.
