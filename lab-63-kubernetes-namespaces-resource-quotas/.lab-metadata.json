@@ -1,0 +1,12 @@
+{
+  "title": "Kubernetes: Streamlining Infrastructure with Namespaces",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2026-01-17T01:58:25.511295",
+  "objectives": [
+    "Understand the purpose and benefits of Kubernetes namespaces.",
+    "Create and manage Kubernetes namespaces.",
+    "Deploy applications within specific namespaces.",
+    "Implement resource quotas to control resource consumption in namespaces."
+  ]
+}
