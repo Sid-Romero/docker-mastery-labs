@@ -1,0 +1,12 @@
+{
+  "title": "Secure Docker Server with Tailscale",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2026-01-19T02:09:26.029906",
+  "objectives": [
+    "Learn how to run Tailscale within a Docker container.",
+    "Understand the importance of host networking for Tailscale integration.",
+    "Securely authenticate a Tailscale client using an auth key.",
+    "Access a service running inside a Docker container through the Tailscale network."
+  ]
+}
