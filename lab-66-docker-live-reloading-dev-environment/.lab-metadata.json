@@ -1,0 +1,12 @@
+{
+  "title": "Docker Live-Reloading Dev Environment",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2026-01-20T02:04:25.149087",
+  "objectives": [
+    "Create a Dockerfile for a basic web application.",
+    "Use Docker Compose to define and manage a development environment.",
+    "Implement live reloading using volume mounts.",
+    "Understand the benefits of Docker for development workflows."
+  ]
+}
