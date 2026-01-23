@@ -1,0 +1,49 @@
+---
+- hosts: localai_servers
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt: update_cache=yes cache_valid_time=3600
+
+    - name: Install required packages for Docker
+      apt: name={{ item }} state=present
+      loop:
+        - apt-transport-https
+        - ca-certificates
+        - curl
+        - software-properties-common
+
+    - name: Add Docker GPG key
+      apt_key: url=https://download.docker.com/linux/ubuntu/gpg
+
+    - name: Add Docker repository
+      apt_repository: repo='deb https://download.docker.com/linux/ubuntu focal stable'
+
+    - name: Install Docker
+      apt: name={{ item }} state=present
+      loop:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+
+    - name: Install Docker Compose
+      apt: name=docker-compose state=present
+
+    - name: Create LocalAI directory
+      file:
+        path: /opt/localai
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+
+    - name: Download Docker Compose file for LocalAI
+      get_url:
+        url: https://raw.githubusercontent.com/mudler/LocalAI/main/docker-compose.yml
+        dest: /opt/localai/docker-compose.yml
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+
+    - name: Start LocalAI containers
+      community.docker.docker_compose:
+        project_src: /opt/localai
+        state: present

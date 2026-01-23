@@ -1,0 +1,11 @@
+{
+  "title": "Ansible: Deploying LocalAI with Docker",
+  "technology": "ansible",
+  "difficulty": "medium",
+  "generated_at": "2026-01-23T02:04:08.715606",
+  "objectives": [
+    "Learn how to write Ansible playbooks for Docker deployment",
+    "Understand how to configure LocalAI using Ansible",
+    "Automate the deployment of a complex application using Ansible"
+  ]
+}
