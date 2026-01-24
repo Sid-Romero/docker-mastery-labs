@@ -1,0 +1,12 @@
+{
+  "title": "Kubernetes: Let's Encrypt with cert-manager",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2026-01-24T02:00:22.974257",
+  "objectives": [
+    "Install and configure cert-manager in a Kubernetes cluster",
+    "Create an Issuer to obtain certificates from Let's Encrypt",
+    "Deploy a simple application and expose it with an Ingress",
+    "Automatically provision SSL certificates for the Ingress using cert-manager"
+  ]
+}
