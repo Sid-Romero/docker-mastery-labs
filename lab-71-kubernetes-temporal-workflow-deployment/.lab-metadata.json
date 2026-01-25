@@ -1,0 +1,11 @@
+{
+  "title": "Kubernetes: Deploying a Simple Workflow with Temporal",
+  "technology": "kubernetes",
+  "difficulty": "medium",
+  "generated_at": "2026-01-25T02:21:37.537348",
+  "objectives": [
+    "Deploy a Temporal cluster on Kubernetes.",
+    "Define Kubernetes deployments and services for Temporal worker and client applications.",
+    "Understand the interaction between Temporal clients, workers, and the Temporal service."
+  ]
+}

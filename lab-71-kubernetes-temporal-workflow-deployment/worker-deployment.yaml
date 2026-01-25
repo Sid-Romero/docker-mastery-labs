@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: temporal-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: temporal-worker
+  template:
+    metadata:
+      labels:
+        app: temporal-worker
+    spec:
+      containers:
+      - name: worker
+        image: <your-dockerhub-username>/my-temporal-worker
+        imagePullPolicy: Always
+        env:
+        - name: TEMPORAL_HOST
+          value: temporal-frontend.temporal-system.svc.cluster.local
