@@ -1,0 +1,12 @@
+{
+  "title": "Docker: Optimizing API Performance with Efficient Builds",
+  "technology": "docker",
+  "difficulty": "medium",
+  "generated_at": "2026-01-26T02:20:29.414676",
+  "objectives": [
+    "Understand Dockerfile best practices for performance.",
+    "Implement multi-stage builds for smaller image size.",
+    "Use Docker Compose to run and test the API.",
+    "Measure and compare image sizes before and after optimization."
+  ]
+}
